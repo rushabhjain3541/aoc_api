@@ -1,0 +1,249 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Feb 07, 2021 at 11:54 AM
+-- Server version: 5.5.57
+-- PHP Version: 5.6.31
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `core-db_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alarm_modules`
+--
+
+CREATE TABLE `alarm_modules` (
+  `id` int(11) NOT NULL,
+  `module_id` int(11) NOT NULL DEFAULT '1',
+  `alarm_id` int(11) NOT NULL,
+  `alarm_info` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alarm_modules`
+--
+
+INSERT INTO `alarm_modules` (`id`, `module_id`, `alarm_id`, `alarm_info`, `description`) VALUES
+(1, 124, 255, 'Empty', 'Used to be extended'),
+(2, 124, 254, 'Battery voltage is too low', ''),
+(3, 124, 253, 'Battery fault', ''),
+(4, 124, 252, 'Keyboard fault', ''),
+(5, 124, 251, 'Communications fault', ''),
+(6, 124, 250, 'Conflict of patient info ', ''),
+(7, 124, 249, 'Module trend is uploading', ''),
+(8, 124, 248, 'Module synchronization', ''),
+(9, 124, 247, 'SD card is full', ''),
+(10, 124, 246, 'SD card is failing', ''),
+(11, 125, 255, 'Empty', 'Used to be extended'),
+(12, 125, 254, 'Fault', ''),
+(13, 125, 253, 'No paper', ''),
+(14, 125, 252, 'Recording ', ''),
+(15, 126, 255, 'Empty', 'Used to be extended'),
+(16, 126, 254, 'Fault', ''),
+(17, 126, 253, 'No paper', ''),
+(18, 126, 252, 'Recording ', ''),
+(19, 1, 255, 'Empty', 'Used to be extended'),
+(20, 1, 254, 'Off', 'Electrode off'),
+(21, 1, 253, 'Polarization ', 'ECG lead polarized'),
+(22, 1, 252, 'Signal weak', 'Arrhythmia code, Continuously arrange the arrhythmia code together to processing conveniently. '),
+(23, 1, 251, 'Asystole (ASY)', ''),
+(24, 1, 250, 'Ventricular fibrillation (VFIB)', ''),
+(25, 1, 249, 'PAC', ''),
+(26, 1, 248, 'Multiple PVCs', ''),
+(27, 1, 247, 'COUPLET', ''),
+(28, 1, 246, 'Vent Bigeminy (BGM)', ''),
+(29, 1, 245, 'Vent Trigeminy (TGM)', ''),
+(30, 1, 244, 'R ON T', ''),
+(31, 1, 243, 'Tachycardia', ''),
+(32, 1, 0, '(TAC)', ''),
+(33, 1, 242, 'Bradycardia', ''),
+(34, 1, 0, '(BRD)', ''),
+(35, 1, 241, 'Missed beats ', ''),
+(36, 1, 0, '(MIS)', ''),
+(37, 1, 240, 'Multiple PACs', ''),
+(38, 1, 239, 'Pacemaker not pulsating', ''),
+(39, 1, 0, '(PNP)', ''),
+(40, 1, 238, 'Pacemaker not capturing', ''),
+(41, 1, 237, 'Noise (NOS)', ''),
+(42, 1, 236, 'VPB', ''),
+(43, 1, 235, 'Noise', ''),
+(44, 3, 255, 'Empty', 'Used to be extended'),
+(45, 3, 254, 'SELF-TEST FAILED', ''),
+(46, 3, 253, 'LOOSE CUFF', ''),
+(47, 3, 252, 'Air leak', ''),
+(48, 3, 251, 'Air pressure error', ''),
+(49, 3, 250, 'Weak signal', ''),
+(50, 3, 249, 'Excessive motion', ''),
+(51, 3, 248, 'Range exceeded', ''),
+(52, 3, 247, 'Hardware overpressure sensed', ''),
+(53, 3, 246, 'Software overpressure sensed', ''),
+(54, 3, 245, 'Signal saturated', ''),
+(55, 3, 244, 'Pneumatic leak', ''),
+(56, 3, 243, 'System failure', ''),
+(57, 3, 242, 'Time out', ''),
+(58, 3, 241, 'Cuff type error', ''),
+(59, 3, 240, 'Zeroing failed', ''),
+(60, 3, 239, 'Cal. Failed', ''),
+(61, 3, 238, 'Hardware overpressure zeroing failed', ''),
+(62, 3, 237, 'Hardware overpressure Cal. Failed', ''),
+(63, 3, 236, 'Resetting', ''),
+(64, 3, 235, 'Overpress Testing', ''),
+(65, 3, 234, 'Manometer Testing', ''),
+(66, 3, 233, 'Air Leakage Testing', ''),
+(67, 2, 255, 'Empty', 'Used to be extended'),
+(68, 2, 254, 'Sensor off', ''),
+(69, 2, 253, 'Probe disconnected', ''),
+(70, 2, 252, 'Searching pulse', ''),
+(71, 2, 251, 'Search overtime ', ''),
+(72, 2, 250, 'Excessive motion', ''),
+(73, 2, 249, 'Desat Limit', ''),
+(74, 2, 248, 'sensor error', ''),
+(75, 2, 247, 'NO_CABLE', ''),
+(76, 2, 246, 'REPLACE_CABLE', ''),
+(77, 2, 245, 'INCOMPATIBLE_CABLE', ''),
+(78, 2, 244, 'UNRECONGNIZED_CABLE', ''),
+(79, 2, 243, 'REPLACED_CABLE', ''),
+(80, 2, 242, 'NO_SENSOR', ''),
+(81, 2, 241, 'INVALID_SENSOR', ''),
+(82, 2, 240, 'REPLACED_SENSOR', ''),
+(83, 2, 239, 'NO_TAPE', ''),
+(84, 2, 238, 'REPLACE_TAPE', ''),
+(85, 2, 237, 'SENSOR_CAL', ''),
+(86, 2, 236, 'INTERFERNCE', ''),
+(87, 2, 235, 'LOW_PERFUSION', ''),
+(88, 2, 234, 'DEMO_TOOL', ''),
+(89, 2, 233, 'SENSOR_CHECK', ''),
+(90, 2, 232, 'FAILURE', ''),
+(91, 2, 231, 'UPGRADE', ' '),
+(92, 2, 230, 'CONNECT_ERR', ''),
+(93, 2, 229, 'LOW_SIQ', ''),
+(94, 2, 228, 'INVALID_TAPE', ''),
+(95, 11, 255, 'Empty', 'Used to be extended'),
+(96, 4, 255, 'Empty', 'Used to be extended'),
+(97, 4, 254, 'Asphyxia ', ''),
+(98, 5, 255, 'Empty', 'Used to be extended'),
+(99, 5, 254, '', ''),
+(100, 5, 253, 'Sensor Over Temp', ''),
+(101, 5, 252, 'CO2 sensor error', ''),
+(102, 5, 251, 'No initialized', ''),
+(103, 5, 250, 'Sensor dormancy mode', ''),
+(104, 5, 249, 'Zeroing ', ''),
+(105, 5, 248, 'Sensor Warm Up', ''),
+(106, 5, 247, 'Check CO2 Sampling Line', ''),
+(107, 5, 246, 'Zero Required', ''),
+(108, 5, 245, 'Range exceeded', ''),
+(109, 5, 244, 'Check airway adapter', ''),
+(110, 5, 243, 'Software error', ''),
+(111, 5, 242, 'Motor Overspeed', ''),
+(112, 5, 241, 'Replace Adapter', ''),
+(113, 5, 240, 'Hardware Error', ''),
+(114, 5, 239, 'Asphyxia ', ''),
+(115, 5, 238, 'Factory config lost', ''),
+(116, 5, 237, 'Sensor signal weak', ''),
+(117, 8, 255, 'Empty', 'Used to be extended'),
+(118, 8, 254, 'Sensor Warm Up', ''),
+(119, 8, 253, 'Probe off', ''),
+(120, 8, 252, 'Sensor error', ''),
+(121, 8, 251, 'Room Air atmosphere calibration Required', ''),
+(122, 8, 250, 'Range exceeded', ''),
+(123, 8, 249, 'Set AA kind', ''),
+(124, 8, 248, 'Mix Agents', ''),
+(125, 10, 255, 'Empty', 'Used to be extended'),
+(126, 10, 254, 'Sensor Warm Up', ''),
+(127, 10, 253, 'Probe off', ''),
+(128, 10, 252, 'Sensor error', ''),
+(129, 9, 255, 'Empty', 'Used to be extended'),
+(130, 9, 254, 'Sensor Warm Up', ''),
+(131, 9, 253, 'Probe off', ''),
+(132, 9, 252, 'Sensor error', ''),
+(133, 9, 251, 'Sensor signal weak', ''),
+(134, 9, 250, 'CALIB', ''),
+(135, 9, 249, 'SPAN_CALIB', ''),
+(136, 9, 248, 'SPAN_ERR', ''),
+(137, 9, 247, 'O2 measurement failure', ''),
+(138, 6, 255, 'Empty', 'Used to be extended'),
+(139, 6, 254, 'Probe off', ''),
+(140, 6, 253, 'Check sensor', ''),
+(141, 7, 255, 'Empty', 'Used to be extended'),
+(142, 7, 254, 'Probe off', ''),
+(143, 7, 253, 'NO_CABLE', ''),
+(144, 13, 255, 'Empty', 'Used to be extended'),
+(145, 12, 255, 'Empty', 'Used to be extended'),
+(146, 2, 0, 'Normal', ''),
+(147, 2, 1, 'Too high', '**'),
+(148, 2, 2, 'Too low', '**'),
+(149, 2, 3, 'Communication fault', ''),
+(150, 1, 0, 'Normal', ''),
+(151, 1, 1, 'High', '*HR'),
+(152, 1, 2, 'Too low', '*HR'),
+(153, 1, 3, 'Communication fault', ''),
+(154, 4, 0, 'Normal', ''),
+(155, 4, 1, 'Too high', '**'),
+(156, 4, 2, 'Too low', '**'),
+(157, 4, 3, 'Communication fault', ''),
+(158, 50, 0, 'Normal', ''),
+(159, 50, 1, 'Too high', '*Temp1'),
+(160, 50, 2, 'Too low', '*Temp1'),
+(161, 50, 3, 'Communication fault', ''),
+(162, 51, 0, 'Normal', ''),
+(163, 51, 1, 'Too high', '*Temp2'),
+(164, 51, 2, 'Too low', '*Temp2'),
+(165, 3, 1, 'High', ''),
+(166, 3, 2, 'High', ''),
+(167, 2, 218, 'Com Error', ''),
+(168, 20, 250, 'Com Error', ''),
+(169, 21, 250, 'Com Error', ''),
+(170, 4, 250, 'Com Error', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `alarm_modules`
+--
+ALTER TABLE `alarm_modules`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_alarm_modules` (`module_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `alarm_modules`
+--
+ALTER TABLE `alarm_modules`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `alarm_modules`
+--
+ALTER TABLE `alarm_modules`
+  ADD CONSTRAINT `fk_alarm_modules` FOREIGN KEY (`module_id`) REFERENCES `modules` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
